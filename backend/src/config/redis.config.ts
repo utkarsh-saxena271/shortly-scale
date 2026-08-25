@@ -1,5 +1,5 @@
 import redis from 'redis'
-import envConfig from './env.config'
+import envConfig from './env.config.js'
 
 const client = redis.createClient({
     url:envConfig.REDIS_URL

@@ -1,4 +1,4 @@
-import client from "../config/redis.config"
+import client from "../config/redis.config.js"
 
 interface SetUrl {
     shortCode: string,

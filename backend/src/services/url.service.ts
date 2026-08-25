@@ -1,7 +1,7 @@
-import envConfig from "../config/env.config"
-import { insertShortCodeToDB } from "../repository/url.repository"
-import { encodeUrl } from "../utils/base62.util"
-import { getNextId } from "./idPool.service"
+import envConfig from "../config/env.config.js"
+import { insertShortCodeToDB } from "../repository/url.repository.js"
+import { encodeUrl } from "../utils/base62.util.js"
+import { getNextId } from "./idPool.service.js"
 
 export const shortenUrlService = async(originalUrl:string) => {
     const id = await getNextId()

@@ -1,5 +1,4 @@
-import prisma from "../config/db.config";
-import envConfig from "../config/env.config";
+import prisma from "../config/db.config.js";
 interface ShortenInsert {
     id: bigint,
     originalUrl: string,
@@ -15,3 +14,12 @@ export const insertShortCodeToDB = async (data:ShortenInsert) => {
     })
     return urlData
 } 
+
+export const getRedirectUrlFromDB = async (shortCode:string) => {
+    const urlData = await prisma.url.findUnique({
+        where:{
+            shortCode
+        }
+    })
+    return urlData
+}

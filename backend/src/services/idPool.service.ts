@@ -1,4 +1,4 @@
-import client from "../config/redis.config";
+import client from "../config/redis.config.js";
 
 let currentId = 0n;
 let maxId = 0n;

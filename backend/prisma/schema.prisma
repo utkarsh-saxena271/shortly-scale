@@ -16,3 +16,15 @@ model Url {
 
   @@index([expiresAt])
 }
+
+enum Tier {
+  FREE
+  PRO
+}
+
+model ApiKey {
+  id        String   @id @default(uuid())
+  hashedKey String   @unique
+  tier      Tier     @default(FREE)
+  createdAt DateTime @default(now())
+}
